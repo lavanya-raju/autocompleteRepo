@@ -1,0 +1,22 @@
+
+  <mat-form-field class="multi-select-combo-box-example-form">
+    <mat-chip id="box-style"
+      *ngFor="let agent of agents"
+      [selectable]="selectable">
+      {{agent}}
+    </mat-chip>
+    <textarea matInput
+      #agentInput
+      [formControl]="agentCtrl"
+      [matAutocomplete]="auto"
+      [matChipInputAddOnBlur]="addOnBlur"
+      (matChipInputTokenEnd)="add($event)"></textarea>
+
+  <mat-autocomplete   #auto="matAutocomplete" (optionSelected)="onAgentSelectionChange($event)">
+    <mat-option  *ngFor="let agent of filteredagents | async"  [value]="agent">
+       <span class="multi-select-option-text">{{agent}}</span>
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+
