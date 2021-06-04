@@ -9,7 +9,6 @@
       #agentInput
       [formControl]="agentCtrl"
       [matAutocomplete]="auto"
-      [matChipInputAddOnBlur]="addOnBlur"
       (matChipInputTokenEnd)="add($event)"></textarea>
 
   <mat-autocomplete   #auto="matAutocomplete" (optionSelected)="onAgentSelectionChange($event)">
